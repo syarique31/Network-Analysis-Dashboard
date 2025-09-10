@@ -3,6 +3,7 @@ When I first set out to get hands-on experience with Splunk, I didn’t quite kn
 
 
 
+<img width="1918" height="971" alt="Screenshot 2025-09-09 at 10 53 32 PM" src="https://github.com/user-attachments/assets/55efaaf6-ab22-4f4c-bdf2-d057550e61a6" />
 
 
 
