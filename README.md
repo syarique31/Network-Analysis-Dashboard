@@ -1,5 +1,5 @@
 # Network-Analysis-Dashboard
-When I first set out to get hands-on experience with Splunk, I didn’t quite know what I was getting myself into. As a cybersecurity intern, I’ve always been curious about the tools that SOC analysts rely on day to day, and Splunk consistently came up in conversations. Around that time, I was even considering another internship opportunity that focused almost entirely on Splunk. That made me even more curious about what made this platform such a big deal in the security world. Everyone described it as a “must-know” tool for analyzing logs, monitoring network traffic, and spotting anomalies that could indicate malicious activity. To me, that sounded like the perfect opportunity to learn how professionals actually dig into data to detect threats across systems, networks, and servers.
+When I first set out to get hands-on experience with Splunk, I wasn’t sure what to expect. As a cybersecurity intern, I often heard how essential it is for SOC analysts, and even came across another internship focused almost entirely on Splunk. That made me curious about why it’s considered a “must-know” tool for analyzing logs, monitoring traffic, and spotting anomalies — and I wanted to see firsthand how professionals use it to detect threats across systems and networks.
 
 
 
@@ -9,16 +9,16 @@ When I first set out to get hands-on experience with Splunk, I didn’t quite kn
 
 
 
-But opening Splunk for the first time was… overwhelming. The interface was full of dashboards, search bars, and menus I didn’t understand. I remember staring at the home screen and thinking, “Okay soo, now what?” That’s when I turned to YouTube. I found an introductory walkthrough that explained Splunk in a way that finally clicked: Splunk Enterprise is essentially the brain of the operation and central hub where all your data gets indexed, stored, and made searchable. Everything else revolves around feeding that brain with fresh data so it can be analyzed.
+Opening Splunk for the first time was overwhelming — the interface was full of dashboards, search bars, and menus I didn’t understand. I remember staring at the home screen thinking, “Okay, now what?” A YouTube walkthrough finally made it click: Splunk Enterprise is the brain of the operation — the central hub where data is indexed, stored, and made searchable, while everything else revolves around feeding it fresh data to analyze.
 
-The process of setting up Splunk Enterprise wasn’t difficult; everything was provided through the GUI, without me having to touch the terminal (which I initially assumed would be the same experience with the Universal Forwarder). Once installed, I created my own admin account and password, and had Splunk Enterprise fully up and running. To get more familiar, I watched another YouTube walkthrough that explained the core features, such as building security dashboards, learning about indexes, and filtering different elements like IP addresses, source and destination MAC addresses, and even geolocation data. After exploring these features, I started wondering if I could import external datasets, such as those from Kaggle, to experiment with creating dashboards and applications.
+Setting up Splunk Enterprise was simple with the GUI — no terminal required. After creating my admin account, I watched a YouTube walkthrough to learn the basics: building dashboards, working with indexes, and filtering by IPs, MAC addresses, and geolocation. Once I got comfortable, I began wondering if I could import external datasets, like those from Kaggle, to experiment with creating dashboards and applications.
 
 
 <img width="1916" height="970" alt="Screenshot 2025-09-12 at 2 17 38 PM" src="https://github.com/user-attachments/assets/bc87501c-2899-4bda-8127-ffce4f1dd451" />
 
 
 
-That curiosity led me to the free BOTS v3 dataset, which provides public AWS-sourced data with multiple sourcetypes. I downloaded it and tried importing it directly into Splunk, but quickly realized it wasn’t that simple. Splunk Enterprise acts as the central hub for indexing and analyzing data, but to get data into it, you usually need an agent that retrieves and forwards logs to the hub. That’s where the Universal Forwarder comes in — a lightweight agent that collects and transmits data to Splunk Enterprise.
+That curiosity led me to the free BOTS v3 dataset, which provides public AWS-sourced data with multiple sourcetypes. I tried importing it into Splunk but quickly realized it wasn’t that simple. Splunk Enterprise is the hub for indexing and analysis, but it needs an agent to bring in data — that’s where the Universal Forwarder comes in, a lightweight tool that collects and sends logs to Enterprise.
 
 
 
@@ -26,7 +26,7 @@ That curiosity led me to the free BOTS v3 dataset, which provides public AWS-sou
 <img width="970" height="966" alt="Screenshot 2025-09-12 at 2 23 18 PM" src="https://github.com/user-attachments/assets/6aaef024-c7fd-4da7-b29d-4170db2ea600" />
 
 
-This part was a bit more challenging, since it required configuring ports and making sure they were available. Fortunately, the Universal Forwarder defaults to port 9997, which was free on my system. In Splunk Enterprise, I configured a new receiving port on 9997, set its status to enabled, and successfully established the connection. With that setup, the Universal Forwarder began transmitting data to Enterprise, completing the pipeline for collection and analysis.
+This part was more challenging, as it meant configuring ports and ensuring they were available. Luckily, the Universal Forwarder defaults to port 9997, which was free on my system. After enabling that port in Splunk Enterprise, the forwarder connected successfully and began transmitting data, completing the pipeline for analysis.
 
 
  
