@@ -22,9 +22,8 @@ That curiosity led me to the free BOTS v3 dataset, which provides public AWS-sou
 
 
 
-<img width="1919" height="972" alt="Screenshot 2025-09-12 at 2 18 17 PM" src="https://github.com/user-attachments/assets/5e68d364-a0fd-48b9-9152-7bec4a0752e2" />
 
-
+<img width="971" height="956" alt="Screenshot 2025-09-12 at 2 22 52 PM" src="https://github.com/user-attachments/assets/a51e2f20-9a4a-46ba-82df-2c2f3c30464f" />
 
 
 
