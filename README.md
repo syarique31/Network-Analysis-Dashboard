@@ -26,7 +26,7 @@ That curiosity led me to the free BOTS v3 dataset, which provides public AWS-sou
 <img width="970" height="966" alt="Screenshot 2025-09-12 at 2 23 18 PM" src="https://github.com/user-attachments/assets/6aaef024-c7fd-4da7-b29d-4170db2ea600" /> <br><br>
 
 
-This part was more challenging, as it meant configuring ports and ensuring they were available. Luckily, the Universal Forwarder defaults to port 9997, which was free on my system. After enabling that port in Splunk Enterprise, the forwarder connected successfully and began transmitting data, completing the pipeline for analysis.
+This part was more challenging, as it meant configuring ports and ensuring they were available. Luckily, the Universal Forwarder defaults to port 9997, which was free on my system. After enabling that port in Splunk Enterprise, the forwarder connected successfully and began transmitting data, completing the pipeline for analysis. <br><br>
 
 
  
