@@ -27,14 +27,14 @@ This step was more challenging since it required configuring ports and ensuring 
 After inserting the dataset into Splunk under /Applications/Splunk/etc/apps and restarting to ensure it was integrated, I logged into Splunk Enterprise and opened the Search & Reporting app. This is the hub for querying data with SPL, where you can filter logs, run stats, and build charts. 
 
 
-From a video I watched about the basics of Splunk, I learned that an index is where you tell Splunk what to search. Since my dataset was called botsv3, I tried using the command index=botsv3, but nothing happened. At first, I was skeptical about why it did not work, and I figured I was missing something. Later, I found on a Splunk guide that you also need to add earliest=0, which tells Splunk to include the very first available event in the dataset. Put together, index=botsv3 earliest=0 means Splunk will search all events in the dataset starting from the very beginning. /> <br><br>
+From a video I watched about Splunk basics, I learned that an index tells Splunk where to search. Since my dataset was called botsv3, I tried index=botsv3, but nothing happened. I later found on a Splunk guide that adding earliest=0 includes the first available events. Together, index=botsv3 earliest=0 searches all events in the dataset from the very beginning.
 
 
  
 <img width="1914" height="969" alt="Screenshot 2025-09-13 at 7 23 36 PM" src="https://github.com/user-attachments/assets/f115573d-5a6b-419a-855b-7f95de5fb776" />/> <br><br>
 
 
-After running the command, I saw a huge number of events that spanned about a year’s worth of logs from the dataset. These events represented different kinds of network activity. Some showed failed services or errors between connection endpoints, while others captured detailed records of network traffic. Each log contained valuable fields such as src_ip and dest_ip to identify endpoints, src_mac and dest_mac for hardware identifiers, and protocol_stack to show which communication protocols were used, such as TCP. I also recognized fields like bytes_in and bytes_out, which represent the amount of data transferred between endpoints. Many of these concepts were already familiar to me from my summer internship, which made it easier to connect the raw data with real-world networking and security practices.
+After running the command, I saw a year’s worth of logs covering different types of network activity. Some showed failed services, while others detailed traffic between endpoints. Each log included fields like src_ip, dest_ip, src_mac, dest_mac, protocol_stack, and data volumes through bytes_in and bytes_out. Many of these concepts were familiar from my internship, which helped me connect the raw data to real-world security practices.
 
 
 
