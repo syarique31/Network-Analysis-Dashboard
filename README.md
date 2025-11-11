@@ -27,39 +27,40 @@ That curiosity led me to the free BOTS v3 dataset, which contains public AWS-sou
 
 
 
-From a video I watched about Splunk basics, I learned that an index tells Splunk where to search. Since my dataset was called botsv3, I tried index=botsv3, but nothing happened. I later found on a Splunk guide that adding earliest=0 includes the first available events. Together, index=botsv3 earliest=0 searches all events in the dataset from the very beginning.
+From a video I watched about Splunk basics, I learned that an index tells Splunk where to search. Since my dataset was called botsv3, I tried index=botsv3, but nothing happened. I later found on a Splunk guide that adding earliest=0 includes the first available events. Together, index=botsv3 earliest=0 searches all events in the dataset from the very beginning. <br><br>
 
 
+ <img width="1918" height="967" alt="Screenshot 2025-11-10 at 9 19 19 PM" src="https://github.com/user-attachments/assets/f2607a5f-7e73-4097-b485-509f67fd0afe" /> <br><br>
+
+
+
+After successfully loading and exploring the BOTS v3 dataset, I wanted to take it a step further and build a Security Analysis Dashboard that looked like a real SOC view. My goal was to visualize security events, identify alert types, and see which hosts were the most active on the network. <br><br>
+
+
+
+I created a new dashboard inside Splunk Enterprise called Security Dashboard. The first panel I built showed the total number of security alerts. It was rewarding to see a live counter that pulled data directly from the dataset, confirming everything was connected properly. <br><br>
+
+
+
+Next, I added an Event Severity Breakdown pie chart to categorize alerts by severity level, such as critical, medium, or unknown. Most logs were labeled as unknown, but it helped me understand how severity tagging works and why it is important for prioritizing incidents. <br><br>
  
-<img width="1914" height="969" alt="Screenshot 2025-09-13 at 7 23 36 PM" src="https://github.com/user-attachments/assets/f115573d-5a6b-419a-855b-7f95de5fb776" />/> <br><br>
-
-
-After successfully loading and exploring the BOTS v3 dataset, I wanted to take it a step further and build a Security Analysis Dashboard that looked like a real SOC view. My goal was to visualize security events, identify alert types, and see which hosts were the most active on the network.
 
 
 
-I created a new dashboard inside Splunk Enterprise called Security Dashboard. The first panel I built showed the total number of security alerts. It was rewarding to see a live counter that pulled data directly from the dataset, confirming everything was connected properly.
+To make it more useful, I built two bar charts. One showed the Top 10 Alert Sources, and the other highlighted the Top Alerting Hosts. These panels made the dashboard more interactive. I could instantly see which devices triggered the most blocked or denied events, showing where most network noise came from. <br><br>
+
+
+I also added an Alert Type Distribution panel to separate alerts into categories like Blocked, Denied, and Alert. This used a simple SPL command with conditions that grouped the event types. It felt similar to how SOC analysts filter data to focus on what really matters. <br><br>
 
 
 
-Next, I added an Event Severity Breakdown pie chart to categorize alerts by severity level, such as critical, medium, or unknown. Most logs were labeled as unknown, but it helped me understand how severity tagging works and why it is important for prioritizing incidents.
+By the end, my dashboard showed a full overview of the dataset with total alerts, severity breakdowns, top sources, and alert types. Each visualization helped me understand how raw log data can be turned into security insights. <br><br>
+
+<img width="1723" height="968" alt="Screenshot 2025-11-10 at 9 20 23 PM" src="https://github.com/user-attachments/assets/96490241-2e69-4ae9-a78a-8ec5ffc296c0" /> <br><br> 
 
 
 
-
-To make it more useful, I built two bar charts. One showed the Top 10 Alert Sources, and the other highlighted the Top Alerting Hosts. These panels made the dashboard more interactive. I could instantly see which devices triggered the most blocked or denied events, showing where most network noise came from.
-
-
-I also added an Alert Type Distribution panel to separate alerts into categories like Blocked, Denied, and Alert. This used a simple SPL command with conditions that grouped the event types. It felt similar to how SOC analysts filter data to focus on what really matters.
-
-
-
-By the end, my dashboard showed a full overview of the dataset with total alerts, severity breakdowns, top sources, and alert types. Each visualization helped me understand how raw log data can be turned into security insights.
-
-
-
-
-Building this taught me how Splunk can transform large amounts of data into clear, actionable information. What started as curiosity became a hands-on project that helped me think like a security analyst.
+Building this taught me how Splunk can transform large amounts of data into clear, actionable information. What started as curiosity became a hands-on project that helped me think like a security analyst. <br><br>
 
 
 
