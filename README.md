@@ -17,14 +17,14 @@ Setting up Splunk Enterprise was simple with the GUI; no terminal was needed. Af
 <img width="1916" height="970" alt="Screenshot 2025-09-12 at 2 17 38 PM" src="https://github.com/user-attachments/assets/bc87501c-2899-4bda-8127-ffce4f1dd451" /> <br><br>
 
 
+ 
+That curiosity led me to the free BOTS v3 dataset, which contains public AWS-sourced data with multiple source types. After inserting it into Splunk, I began to see how powerful the platform really was. Thousands of logs appeared showing real network traffic and system activity; it felt like being in a real SOC. Splunk instantly organized everything, letting me search and spot patterns using simple SPL queries. <br><br>
 
-That curiosity led me to the free BOTS v3 dataset, which contains public AWS-sourced data with multiple sourcetypes. I tried importing it into Splunk, but soon realized it was not that simple. Splunk Enterprise acts as the hub for indexing and analysis, but it needs an agent to bring in data. That is where the Universal Forwarder comes in, a lightweight tool that collects and sends logs to Enterprise.  <br><br>
+
 
 <img width="970" height="966" alt="Screenshot 2025-09-12 at 2 23 18 PM" src="https://github.com/user-attachments/assets/6aaef024-c7fd-4da7-b29d-4170db2ea600" /> <br><br>
 
-This step was more challenging since it required configuring ports and ensuring they were available. Fortunately, the Universal Forwarder defaults to port 9997, which was open on my system. After enabling it in Splunk Enterprise, the forwarder connected successfully and began transmitting data, completing the pipeline for analysis. <br><br>
 
-After inserting the dataset into Splunk under /Applications/Splunk/etc/apps and restarting to ensure it was integrated, I logged into Splunk Enterprise and opened the Search & Reporting app. This is the hub for querying data with SPL, where you can filter logs, run stats, and build charts. 
 
 
 From a video I watched about Splunk basics, I learned that an index tells Splunk where to search. Since my dataset was called botsv3, I tried index=botsv3, but nothing happened. I later found on a Splunk guide that adding earliest=0 includes the first available events. Together, index=botsv3 earliest=0 searches all events in the dataset from the very beginning.
@@ -34,7 +34,35 @@ From a video I watched about Splunk basics, I learned that an index tells Splunk
 <img width="1914" height="969" alt="Screenshot 2025-09-13 at 7 23 36 PM" src="https://github.com/user-attachments/assets/f115573d-5a6b-419a-855b-7f95de5fb776" />/> <br><br>
 
 
-After running the command, I saw a year’s worth of logs covering different types of network activity. Some showed failed services, while others detailed traffic between endpoints. Each log included fields like src_ip, dest_ip, src_mac, dest_mac, protocol_stack, and data volumes through bytes_in and bytes_out. Many of these concepts were familiar from my internship, which helped me connect the raw data to real-world security practices.
+After successfully loading and exploring the BOTS v3 dataset, I wanted to take it a step further and build a Security Analysis Dashboard that looked like a real SOC view. My goal was to visualize security events, identify alert types, and see which hosts were the most active on the network.
+
+
+
+I created a new dashboard inside Splunk Enterprise called Security Dashboard. The first panel I built showed the total number of security alerts. It was rewarding to see a live counter that pulled data directly from the dataset, confirming everything was connected properly.
+
+
+
+Next, I added an Event Severity Breakdown pie chart to categorize alerts by severity level, such as critical, medium, or unknown. Most logs were labeled as unknown, but it helped me understand how severity tagging works and why it is important for prioritizing incidents.
+
+
+
+
+To make it more useful, I built two bar charts. One showed the Top 10 Alert Sources, and the other highlighted the Top Alerting Hosts. These panels made the dashboard more interactive. I could instantly see which devices triggered the most blocked or denied events, showing where most network noise came from.
+
+
+I also added an Alert Type Distribution panel to separate alerts into categories like Blocked, Denied, and Alert. This used a simple SPL command with conditions that grouped the event types. It felt similar to how SOC analysts filter data to focus on what really matters.
+
+
+
+By the end, my dashboard showed a full overview of the dataset with total alerts, severity breakdowns, top sources, and alert types. Each visualization helped me understand how raw log data can be turned into security insights.
+
+
+
+
+Building this taught me how Splunk can transform large amounts of data into clear, actionable information. What started as curiosity became a hands-on project that helped me think like a security analyst.
+
+
+
 
 
 
