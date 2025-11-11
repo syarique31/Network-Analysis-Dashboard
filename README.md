@@ -40,18 +40,23 @@ After successfully loading and exploring the BOTS v3 dataset, I wanted to take i
 
 I created a new dashboard inside Splunk Enterprise called Security Dashboard. The first panel I built showed the total number of security alerts. It was rewarding to see a live counter that pulled data directly from the dataset, confirming everything was connected properly. <br><br>
 
+<img width="535" height="335" alt="Screenshot 2025-11-10 at 9 27 16 PM" src="https://github.com/user-attachments/assets/dfe2799d-33a7-4c97-9625-32631202634f" /> <br><br>
 
 
 Next, I added an Event Severity Breakdown pie chart to categorize alerts by severity level, such as critical, medium, or unknown. Most logs were labeled as unknown, but it helped me understand how severity tagging works and why it is important for prioritizing incidents. <br><br>
  
+<img width="536" height="433" alt="Screenshot 2025-11-10 at 9 26 13 PM" src="https://github.com/user-attachments/assets/5d8d5c67-9b47-45ee-a0ce-eb982f917e16" /> <br><br>
 
 
 
 To make it more useful, I built two bar charts. One showed the Top 10 Alert Sources, and the other highlighted the Top Alerting Hosts. These panels made the dashboard more interactive. I could instantly see which devices triggered the most blocked or denied events, showing where most network noise came from. <br><br>
 
+<img width="549" height="338" alt="Screenshot 2025-11-10 at 9 27 36 PM" src="https://github.com/user-attachments/assets/2ed11cf9-0dfa-4873-a875-8ec1baa4b2e4" /> <br><br>
+
 
 I also added an Alert Type Distribution panel to separate alerts into categories like Blocked, Denied, and Alert. This used a simple SPL command with conditions that grouped the event types. It felt similar to how SOC analysts filter data to focus on what really matters. <br><br>
 
+<img width="544" height="460" alt="Screenshot 2025-11-10 at 9 28 04 PM" src="https://github.com/user-attachments/assets/16a222cb-9736-4808-9597-31d7cbbade51" /> <br><br>
 
 
 By the end, my dashboard showed a full overview of the dataset with total alerts, severity breakdowns, top sources, and alert types. Each visualization helped me understand how raw log data can be turned into security insights. <br><br>
