@@ -1,4 +1,4 @@
-# Network-Analysis-Dashboard
+# Security Analysis Dashboard
 When I first set out to get hands on with Splunk, I had no idea what to expect. As a cybersecurity intern, I kept hearing how critical it is for SOC analysts, and I even came across another internship centered almost entirely on Splunk. That made me curious about why it is seen as a must-know tool for analyzing logs, monitoring traffic, and spotting anomalies. I wanted to see for myself how professionals use it to uncover threats across systems and networks. 
 
 
